@@ -1,12 +1,19 @@
 ﻿Console.Write("Введите через запитую элементы массива: ");
 var userInput = Console.ReadLine();
 
-var words = ParseWords(userInput);
-var wordsWhith3Chars = GetWordsWith3Chars(words);
-
-foreach (var word in wordsWhith3Chars)
+if (!string.IsNullOrWhiteSpace(userInput))
 {
-	Console.WriteLine(word);
+	var words = ParseWords(userInput);
+	var wordsWhith3Chars = GetWordsWith3Chars(words);
+
+	foreach (var word in wordsWhith3Chars)
+	{
+		Console.WriteLine(word);
+	}
+}
+else
+{
+	Console.WriteLine("Вы ввели не верное значение");
 }
 
 IEnumerable<string> ParseWords(string userInput)
